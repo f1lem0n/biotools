@@ -1,9 +1,9 @@
-# modules
+# modules and functions
 import sys
-
-# functions
 from typing import Union
 
+
+# functions
 
 def is_nucleic(seq: str, acid: str) -> Union[bool, str]:
     """
