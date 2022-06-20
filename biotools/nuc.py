@@ -1,7 +1,6 @@
 # modules and functions
 import sys
-import biotools.uni as u
-
+import biotools.uni as uni
 
 # functions
 
@@ -15,7 +14,7 @@ def nuc_freq(seq: str, seq_type: str) -> dict:
     :returns: dictionary with counted nucleotides
     """
     count = {"A": 0, "T": 0, "C": 0, "G": 0}
-    if u.validator(seq, seq_type):
+    if uni.validator(seq, seq_type):
         for nuc in seq.upper():
             count[nuc] += 1
     else:
@@ -31,7 +30,7 @@ def trans(seq: str) -> str:
     :param seq: input DNA sequence string
     :returns: RNA sequence
     """
-    if u.validator(seq, 'dna') == 'DNA':
+    if uni.validator(seq, 'dna') == 'DNA':
         return seq.upper().replace('T', 'U')
 
 
@@ -43,7 +42,7 @@ def reverse(seq: str, seq_type: str) -> str:
     :param seq_type: input 'DNA' or 'RNA'
     :returns: reversed sequence
     """
-    if u.validator(seq, seq_type):
+    if uni.validator(seq, seq_type):
         ls = list(reversed(seq.upper()))
         return ''.join(ls)
 
@@ -58,7 +57,7 @@ def complement(seq: str, seq_type: str) -> str:
     """
     code = {'A': 'T', 'C': 'G', 'T': 'A', 'G': 'C', 'U': 'A'}
     cseq = ''
-    if u.validator(seq, seq_type):
+    if uni.validator(seq, seq_type):
         for nuc in seq.upper():
             cseq += code[nuc]
     return cseq
