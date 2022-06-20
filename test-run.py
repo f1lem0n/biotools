@@ -1,2 +1,4 @@
-import biotools.DNA as d
-import biotools.prot as p
+import biotools.nucleic as nuc
+import biotools.prot as prot
+
+print(nuc.complement('ataucg', 'dna'))
