@@ -1,0 +1,3 @@
+>lcl|MF098562.1_cds_AWJ64387.1_1 [gene=BRCA2] [protein=BRCA2] [protein_id=AWJ64387.1] [location=<1..>287] [gbkey=CDS]
+ATCTTTTACCCTA
+
