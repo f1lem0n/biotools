@@ -1,5 +1,6 @@
 # modules and functions
 import sys
+
 import biotools.uni as uni
 
 
@@ -87,20 +88,24 @@ def pmc(seq1: str, seq2: str, mode: str, print_output: bool = False) -> int:
     :param seq1: first sequence
     :param seq2: second sequence
     :param mode: 'ignore indels' or 'best match'
-    :param print_output: print compared seqences (default: False)
+    :param print_output: print compared sequences (default: False)
     :return: number of point mutations
     """
 
     def output(seq1, seq2, matches, count):
-        print('-------------------------\n' +
-              f'point mutation count: {count}\n' +
-              '-------------------------\n')
+        print(
+            '-------------------------\n' +
+            f'point mutation count: {count}\n' +
+            '-------------------------\n'
+        )
         previouslen = 0
         while min(len(seq1), len(seq2)):
             matcheslen = len(matches[:20])
-            print(seq1[:20] + '\n' +
-                  f'{matches[:20]:22}{matcheslen + previouslen}' + '\n' +
-                  seq2[:20])
+            print(
+                seq1[:20] + '\n' +
+                f'{matches[:20]:22}{matcheslen + previouslen}' + '\n' +
+                seq2[:20]
+            )
             previouslen += 20
             seq1, seq2, matches = seq1[20:], seq2[20:], matches[20:]
 
@@ -121,4 +126,3 @@ def pmc(seq1: str, seq2: str, mode: str, print_output: bool = False) -> int:
         print('i am too stupid yet')
         if print_output:
             output(seq1, seq2, matches='', count=0)
-

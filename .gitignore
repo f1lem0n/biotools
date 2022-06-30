@@ -11,3 +11,7 @@ testrun.py
 *.toc
 *.gz
 *.mpl
+*/*/*.pyc
+*/*.xml
+*/*.iml
+.idea
